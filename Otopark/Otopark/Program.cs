@@ -55,7 +55,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 // 4. CORS Politikası (Swagger ve Frontend İçin)
 builder.Services.AddCors(options =>
 {
@@ -75,9 +74,13 @@ var app = builder.Build();
 // 6. Ortam Kontrolleri ve Middleware
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage(); // Hataları daha detaylı görmek için
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Otopark API v1");
+        c.RoutePrefix = string.Empty; // Swagger UI ana sayfa olarak yüklensin.
+    });
 }
 
 app.UseHttpsRedirection(); // HTTPS yönlendirmesi
