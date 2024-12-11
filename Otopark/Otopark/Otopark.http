@@ -1,0 +1,6 @@
+@Otopark_HostAddress = http://localhost:5258
+
+GET {{Otopark_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
