@@ -7,3 +7,5 @@ public class VehicleType
     
     public ICollection<Car> Cars { get; set; }
 }
+
+

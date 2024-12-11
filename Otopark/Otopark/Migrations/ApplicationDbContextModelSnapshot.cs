@@ -10,6 +10,7 @@ using Otopark.DbContext;
 
 namespace Otopark.Migrations
 {
+    
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {

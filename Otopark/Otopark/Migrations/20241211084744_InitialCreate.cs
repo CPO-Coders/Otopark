@@ -6,6 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Otopark.Migrations
 {
+    
     /// <inheritdoc />
     public partial class InitialCreate : Migration
     {

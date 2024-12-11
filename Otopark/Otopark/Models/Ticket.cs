@@ -2,6 +2,7 @@ namespace Otopark.Models;
 
 public class Ticket
 {
+    
     public int Id { get; set; } 
     public int CarId { get; set; }
     public int SpotId { get; set; }
