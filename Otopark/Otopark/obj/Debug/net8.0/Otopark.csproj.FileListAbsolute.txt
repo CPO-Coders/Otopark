@@ -51,3 +51,12 @@
 /Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/obj/Debug/net8.0/Otopark.pdb
 /Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/obj/Debug/net8.0/Otopark.genruntimeconfig.cache
 /Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/obj/Debug/net8.0/ref/Otopark.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

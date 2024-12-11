@@ -10,7 +10,6 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     
     
     
-    
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
