@@ -7,7 +7,7 @@ public class Spot
     
     public string Code { get; set; }
     
-    public string Status { get; set; }
+    public bool Status { get; set; }
     public int TypeId { get; set; }
     
    
