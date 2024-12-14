@@ -155,6 +155,21 @@ namespace Otopark.Controllers
             return Ok(carDtoResponse);
         }
         [Authorize]
+        [HttpGet]
+        public async Task<ActionResult<List<Car>>> GetAllCars()
+        {
+            try
+            {
+                var car = _context.Cars.ToList();
+                return Ok(car);
+            }
+            catch (Exception e)
+            {
+                
+                return BadRequest(e.Message);
+            }
+        }
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCar(int id)
         {
