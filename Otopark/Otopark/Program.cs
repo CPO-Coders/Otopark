@@ -89,4 +89,4 @@ app.UseAuthentication(); // JWT doğrulama
 app.UseAuthorization();  // Yetkilendirme
 app.MapControllers();    // Controller'ları haritalandır
 
-app.Run(); // Uygulamayı başlat
+app.Run(); // Uygulamayı başlat düzenle

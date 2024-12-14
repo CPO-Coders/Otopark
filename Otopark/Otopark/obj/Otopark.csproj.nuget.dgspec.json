@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj": {}
+    "/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj": {}
   },
   "projects": {
-    "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj": {
+    "/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj",
+        "projectUniqueName": "/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj",
         "projectName": "Otopark",
-        "projectPath": "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj",
-        "packagesPath": "/Users/semreerol/.nuget/packages/",
-        "outputPath": "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/obj/",
+        "projectPath": "/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/Otopark.csproj",
+        "packagesPath": "/Users/kubrasaglam/.nuget/packages/",
+        "outputPath": "/Users/kubrasaglam/RiderProjects/Otopark/Otopark/Otopark/obj/",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "/Users/semreerol/.nuget/NuGet/NuGet.Config"
+          "/Users/kubrasaglam/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,6 +80,14 @@
               "target": "Package",
               "version": "[7.0.11, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -104,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

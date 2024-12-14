@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Otopark.Models;
 
 public class Car

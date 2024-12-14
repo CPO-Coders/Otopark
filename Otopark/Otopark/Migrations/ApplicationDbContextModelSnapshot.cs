@@ -10,7 +10,6 @@ using Otopark.DbContext;
 
 namespace Otopark.Migrations
 {
-    
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
@@ -65,9 +64,8 @@ namespace Otopark.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("TypeId")
                         .HasColumnType("integer");
@@ -87,7 +85,7 @@ namespace Otopark.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CarId")
+                    b.Property<int?>("CarId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("EntryTime")
@@ -196,8 +194,7 @@ namespace Otopark.Migrations
                     b.HasOne("Otopark.Models.Car", "Car")
                         .WithMany()
                         .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Otopark.Models.Spot", "Spot")
                         .WithMany("Tickets")

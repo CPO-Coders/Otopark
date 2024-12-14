@@ -5,6 +5,7 @@ using Otopark.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Otopark.Controllers
 {
@@ -13,11 +14,15 @@ namespace Otopark.Controllers
     public class CarController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        
+        private readonly ILogger<CarController> _logger;
 
-        public CarController(ApplicationDbContext context)
+        public CarController(ApplicationDbContext context, ILogger<CarController> logger)
         {
             _context = context;
+            _logger = logger;
         }
+
 
         [Authorize]
         [HttpPost]
@@ -149,22 +154,46 @@ namespace Otopark.Controllers
 
             return Ok(carDtoResponse);
         }
-
-        // Araç Silme
+        [Authorize]
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteCar(int id)
+        public async Task<IActionResult> DeleteCar(int id)
         {
-            var car = await _context.Cars.Include(c => c.VehicleType).FirstOrDefaultAsync(c => c.Id == id);
-
+            var car = await _context.Cars.FindAsync(id);
             if (car == null)
             {
-                return NotFound("Araç bulunamadı.");
+                return NotFound("Araba bulunamadı.");
             }
+    
+            var tickets = await _context.Tickets.Where(t => t.CarId == id).ToListAsync();
+            
+            foreach (var ticket in tickets)
+            {
+                var deleteTime = DateTime.UtcNow;
+        
+                // Çıkış zamanını ve ücreti güncelle
+                ticket.ExitTime = DateTime.UtcNow;
+                var timeSpent = ticket.ExitTime.Value - ticket.EntryTime;
+                var fee = (decimal)(timeSpent.TotalHours * 10);
+                ticket.Fee = fee;
+                
+                ticket.CarId = null;
 
+                ticket.Status = "false"; //Ticket false alındı pasif artık
+                
+                _context.Tickets.Update(ticket);
+        
+                // Loglama işlemi
+                _logger.LogInformation(
+                    $"Silinen Ticket: Id = {ticket.Id}, CarId = {ticket.CarId}, SpotId = {ticket.SpotId}, EntryTime = {ticket.EntryTime}, ExitTime = {ticket.ExitTime}, Fee = {ticket.Fee}, Status = {ticket.Status}, DeletedTime = {deleteTime}");
+            }
+            
             _context.Cars.Remove(car);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
+
+
     }
 }

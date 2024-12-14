@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "aA5kcpyiA4A05tryKy5i16wvL594woIWABeR29HtnC0=",
+  "Hash": "KxrH1jeYwYi9ieCEPcuRPay3VRe8B26qjSltE/OU24g=",
   "Source": "Otopark",
   "BasePath": "_content/Otopark",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }
