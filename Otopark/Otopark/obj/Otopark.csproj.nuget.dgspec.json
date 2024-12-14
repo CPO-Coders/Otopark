@@ -13,6 +13,7 @@
         "packagesPath": "/Users/semreerol/.nuget/packages/",
         "outputPath": "/Users/semreerol/RiderProjects/Otopark/Otopark/Otopark/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/semreerol/.nuget/NuGet/NuGet.Config"
         ],
@@ -37,8 +38,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {

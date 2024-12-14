@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Otopark")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9375ac7d88ed8d144ca79a7e9adc1105a8cacb5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3377d0b9d0dce323a741d26e25bce9a33306ef1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Otopark")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Otopark")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
