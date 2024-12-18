@@ -17,7 +17,7 @@ public class SpotController : ControllerBase
         _context = context;
     }
 
-    // 1. Tüm Yerleri Listeleme
+    
     [HttpGet]
     public async Task<IActionResult> GetAllSpots()
     {
@@ -27,7 +27,7 @@ public class SpotController : ControllerBase
         return Ok(spots);
     }
 
-    // 2. Yer Detaylarını Getirme
+    
     [HttpGet("{id}")]
     public async Task<IActionResult> GetSpotById(int id)
     {
@@ -41,7 +41,7 @@ public class SpotController : ControllerBase
         return Ok(spot);
     }
 
-    // 3. Yeni Yer Ekleme
+    
     [HttpPost]
     public async Task<IActionResult> CreateSpot([FromBody] SpotDto spotDto)
     {
@@ -71,7 +71,7 @@ public class SpotController : ControllerBase
         return CreatedAtAction(nameof(GetSpotById), new { id = spot.Id }, spot);
     }
 
-    // 4. Yer Güncelleme
+    
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateSpot(int id, [FromBody] SpotDto spotDto)
     {
@@ -94,7 +94,7 @@ public class SpotController : ControllerBase
         return NoContent();
     }
 
-    // 5. Yer Silme
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteSpot(int id)
     {
@@ -109,7 +109,7 @@ public class SpotController : ControllerBase
         return NoContent();
     }
 
-    // 6. Park Etme
+    
     [HttpPut("ParkActive: {id}")]
     public async Task<IActionResult> SpotActive(int id)
     {
@@ -127,7 +127,7 @@ public class SpotController : ControllerBase
         return Ok($"Yer '{spot.Code}' başarıyla dolu olarak işaretlendi.");
     }
 
-    // 7. Boşaltma
+    
     [HttpPut("ParkPassive{id}")]
     public async Task<IActionResult> SpotPassive(int id)
     {
