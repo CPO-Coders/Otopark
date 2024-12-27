@@ -28,7 +28,6 @@ public class UserController : ControllerBase
                 Name = userDto.Name,
                 Username = userDto.Username,
                 Surname = userDto.Surname,
-                // Parolayı hash'le
                 Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password)
             };
 
@@ -99,5 +98,38 @@ public class UserController : ControllerBase
             return StatusCode(500, "Internal server error");
         }
     }
+    
+    [HttpPut("{id}")]
+    public ActionResult<User> UpdateUser(int id, UserDto userDto)
+    {
+        try
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
+
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+            
+            user.Name = userDto.Name;
+            user.Username = userDto.Username;
+            user.Surname = userDto.Surname;
+            
+            if (!string.IsNullOrEmpty(userDto.Password))
+            {
+                user.Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
+            }
+            
+            _context.SaveChanges();
+
+            return Ok(user); 
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Hata oluştu: {e.Message}");
+            return StatusCode(500, "Internal server error");
+        }
+    }
+
 
 }

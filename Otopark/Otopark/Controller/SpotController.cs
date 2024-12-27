@@ -144,4 +144,28 @@ public class SpotController : ControllerBase
         await _context.SaveChangesAsync();
         return Ok($"Yer '{spot.Code}' başarıyla boş olarak işaretlendi.");
     }
+    
+    [HttpGet("GetSpotsByStatus")]
+    public async Task<IActionResult> GetSpotsByStatus([FromQuery] bool status)
+    {
+        try
+        {
+            var spots = await _context.Spots
+                .Where(s => s.Status == status)
+                .ToListAsync();
+            
+            if (!spots.Any())
+                return NotFound($"No spots found with status: {status}");
+
+            return Ok(spots);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Hata oluştu: {ex.Message}");
+            return StatusCode(500, "Internal server error");
+        }
+    }
+
+    
+    
 }

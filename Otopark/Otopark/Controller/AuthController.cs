@@ -46,7 +46,7 @@ namespace Otopark.Controller
             // Kullanıcı doğrulandı, JWT token oluştur
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.Username), // Kullanıcı e-postası
+                new Claim(ClaimTypes.Name, user.Username), 
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Kullanıcı ID'si
             };
 
@@ -66,7 +66,7 @@ namespace Otopark.Controller
     // Login Model
     public class LoginModel
     {
-        public string Username { get; set; }  // E-posta
+        public string Username { get; set; }  // E-posta  bizim için kullanıcı adı oldu
         public string Password { get; set; }  // Parola
     }
 }

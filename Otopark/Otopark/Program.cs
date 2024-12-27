@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Otopark.DbContext;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +56,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
+// Serilog yapılandırması
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 // 4. CORS Politikası (Swagger ve Frontend İçin)
 builder.Services.AddCors(options =>
 {
@@ -68,6 +75,8 @@ builder.Services.AddCors(options =>
 
 // 5. Controller Desteğini Ekleyin
 builder.Services.AddControllers();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
